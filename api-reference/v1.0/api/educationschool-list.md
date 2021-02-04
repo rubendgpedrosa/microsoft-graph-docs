@@ -1,17 +1,17 @@
 ---
-title: "Get educationSchool"
-description: "Read the properties and relationships of an educationSchool object."
+title: "List educationSchools"
+description: "Get a list of the educationSchool objects and their properties."
 author: "mlafleur"
 localization_priority: Normal
 ms.prod: "education"
 doc_type: apiPageType
 ---
 
-# Get a School
+# List Schools
 
 Namespace: microsoft.graph
 
-Read the properties and relationships of an [educationSchool](../resources/educationschool.md) object.
+Get a list of the [educationSchool](../resources/educationschool.md) objects and their properties.
 
 ## Permissions
 
@@ -31,7 +31,10 @@ One of the following permissions is required to call this API. To learn more, in
 -->
 
 ```http
-GET /education/schools/{educationSchoolId}
+GET /education/schools
+GET /education/me/schools
+GET /education/users/{id}/schools
+GET /education/classes/{id}/schools
 ```
 
 ## Optional query parameters
@@ -50,7 +53,7 @@ Do not supply a request body for this method.
 
 ## Response
 
-If successful, this method returns a `200 OK` response code and an [educationSchool](../resources/educationschool.md) object in the response body.
+If successful, this method returns a `200 OK` response code and a collection of [educationSchool](../resources/educationschool.md) objects in the response body.
 
 ## Examples
 
@@ -58,12 +61,12 @@ If successful, this method returns a `200 OK` response code and an [educationSch
 
 <!-- {
   "blockType": "request",
-  "name": "get_educationschool"
+  "name": "list_educationschool"
 }
 -->
 
 ```http
-GET https://graph.microsoft.com/v1.0/education/schools/{educationSchoolId}
+GET https://graph.microsoft.com/v1.0/education/schools
 ```
 
 ### Response
@@ -73,7 +76,7 @@ GET https://graph.microsoft.com/v1.0/education/schools/{educationSchoolId}
 <!-- {
   "blockType": "response",
   "truncated": true,
-  "@odata.type": "microsoft.education.rostering.api.educationSchool"
+  "@odata.type": "Collection(microsoft.education.rostering.api.educationSchool)"
 }
 -->
 
@@ -82,27 +85,29 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "value": {
-    "@odata.type": "#microsoft.education.rostering.api.educationSchool",
-    "displayName": "String",
-    "description": "String",
-    "externalSource": "String",
-    "externalSourceDetail": "String",
-    "principalEmail": "String",
-    "principalName": "String",
-    "externalPrincipalId": "String",
-    "lowestGrade": "String",
-    "highestGrade": "String",
-    "schoolNumber": "String",
-    "externalId": "String",
-    "phone": "String",
-    "fax": "String",
-    "createdBy": {
-      "@odata.type": "microsoft.graph.identitySet"
-    },
-    "address": {
-      "@odata.type": "microsoft.graph.physicalAddress"
+  "value": [
+    {
+      "@odata.type": "#microsoft.education.rostering.api.educationSchool",
+      "displayName": "String",
+      "description": "String",
+      "externalSource": "String",
+      "externalSourceDetail": "String",
+      "principalEmail": "String",
+      "principalName": "String",
+      "externalPrincipalId": "String",
+      "lowestGrade": "String",
+      "highestGrade": "String",
+      "schoolNumber": "String",
+      "externalId": "String",
+      "phone": "String",
+      "fax": "String",
+      "createdBy": {
+        "@odata.type": "microsoft.graph.identitySet"
+      },
+      "address": {
+        "@odata.type": "microsoft.graph.physicalAddress"
+      }
     }
-  }
+  ]
 }
 ```

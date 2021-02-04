@@ -1,17 +1,17 @@
 ---
-title: "Update educationSchool"
-description: "Update the properties of an educationSchool object."
+title: "Create educationSchool"
+description: "Create a new educationSchool object."
 author: "mlafleur"
 localization_priority: Normal
 ms.prod: "education"
 doc_type: apiPageType
 ---
 
-# Update a School
+# Create a new School
 
 Namespace: microsoft.graph
 
-Update the properties of an [educationSchool](../resources/educationschool.md) object.
+Create a new [educationSchool](../resources/educationschool.md) object.
 
 ## Permissions
 
@@ -31,7 +31,7 @@ One of the following permissions is required to call this API. To learn more, in
 -->
 
 ```http
-PATCH /education/schools/{educationSchoolId}
+POST /education/schools
 ```
 
 ## Request headers
@@ -45,7 +45,7 @@ PATCH /education/schools/{educationSchoolId}
 
 In the request body, supply a JSON representation of the [educationSchool](../resources/educationschool.md) object.
 
-The following table shows the properties that are required when you update the [educationSchool](../resources/educationschool.md).
+The following table shows the properties that are required when you create the [educationSchool](../resources/educationschool.md).
 
 | Property             | Type                                               | Description                                                                                                                                                                                        |
 | :------------------- | :------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -67,7 +67,7 @@ The following table shows the properties that are required when you update the [
 
 ## Response
 
-If successful, this method returns a `200 OK` response code and an updated [educationSchool](../resources/educationschool.md) object in the response body.
+If successful, this method returns a `201 Created` response code and an [educationSchool](../resources/educationschool.md) object in the response body.
 
 ## Examples
 
@@ -75,17 +75,17 @@ If successful, this method returns a `200 OK` response code and an updated [educ
 
 <!-- {
   "blockType": "request",
-  "name": "update_educationschool"
+  "name": "create_educationschool_from_"
 }
 -->
 
 ```http
-PATCH https://graph.microsoft.com/v1.0/education/schools/{educationSchoolId}
+POST https://graph.microsoft.com/v1.0/education/schools
 Content-Type: application/json
-Content-length: 583
+Content-length: 601
 
 {
-  "@odata.type": "#microsoft.graph.educationSchool",
+  "@odata.type": "#microsoft.education.rostering.api.educationSchool",
   "displayName": "String",
   "description": "String",
   "externalSource": "String",
@@ -114,16 +114,17 @@ Content-length: 583
 
 <!-- {
   "blockType": "response",
-  "truncated": true
+  "truncated": true,
+  "@odata.type": "microsoft.education.rostering.api.educationSchool"
 }
 -->
 
 ```http
-HTTP/1.1 200 OK
+HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
-  "@odata.type": "#microsoft.graph.educationSchool",
+  "@odata.type": "#microsoft.education.rostering.api.educationSchool",
   "displayName": "String",
   "description": "String",
   "externalSource": "String",

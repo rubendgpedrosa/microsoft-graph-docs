@@ -1,17 +1,17 @@
 ---
-title: "Update educationUser"
-description: "Update the properties of an educationUser object."
+title: "Create educationUser"
+description: "Create a new educationUser object."
 author: "mlafleur"
 localization_priority: Normal
 ms.prod: "education"
 doc_type: apiPageType
 ---
 
-# Update an Edu User
+# Create an Edu User
 
 Namespace: microsoft.graph
 
-Update the properties of an [educationUser](../resources/educationuser.md) object.
+Create a new [educationUser](../resources/educationuser.md) object.
 
 ## Permissions
 
@@ -31,8 +31,7 @@ One of the following permissions is required to call this API. To learn more, in
 -->
 
 ```http
-PATCH /education/me
-PATCH /education/users/{educationUserId}
+POST /education/users
 ```
 
 ## Request headers
@@ -46,7 +45,7 @@ PATCH /education/users/{educationUserId}
 
 In the request body, supply a JSON representation of the [educationUser](../resources/educationuser.md) object.
 
-The following table shows the properties that are required when you update the [educationUser](../resources/educationuser.md).
+The following table shows the properties that are required when you create the [educationUser](../resources/educationuser.md).
 
 | Property             | Type                                                               | Description                                                                                                                                                                                                                                                                                                                                                 |
 | :------------------- | :----------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -81,7 +80,7 @@ The following table shows the properties that are required when you update the [
 
 ## Response
 
-If successful, this method returns a `200 OK` response code and an updated [educationUser](../resources/educationuser.md) object in the response body.
+If successful, this method returns a `201 Created` response code and an [educationUser](../resources/educationuser.md) object in the response body.
 
 ## Examples
 
@@ -89,17 +88,17 @@ If successful, this method returns a `200 OK` response code and an updated [educ
 
 <!-- {
   "blockType": "request",
-  "name": "update_educationuser"
+  "name": "create_educationuser_from_"
 }
 -->
 
 ```http
-PATCH https://graph.microsoft.com/v1.0/education/me
+POST https://graph.microsoft.com/v1.0/education/users
 Content-Type: application/json
-Content-length: 1585
+Content-length: 1603
 
 {
-  "@odata.type": "#microsoft.graph.educationUser",
+  "@odata.type": "#microsoft.education.rostering.api.educationUser",
   "primaryRole": "String",
   "middleName": "String",
   "externalSource": "String",
@@ -168,16 +167,17 @@ Content-length: 1585
 
 <!-- {
   "blockType": "response",
-  "truncated": true
+  "truncated": true,
+  "@odata.type": "microsoft.education.rostering.api.educationUser"
 }
 -->
 
 ```http
-HTTP/1.1 200 OK
+HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
-  "@odata.type": "#microsoft.graph.educationUser",
+  "@odata.type": "#microsoft.education.rostering.api.educationUser",
   "primaryRole": "String",
   "middleName": "String",
   "externalSource": "String",

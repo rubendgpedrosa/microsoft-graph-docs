@@ -26,6 +26,7 @@ One of the following permissions is required to call this API. To learn more, in
 ## HTTP request
 
 <!-- { "blockType": "ignored" } -->
+
 ```http
 POST /education/schools
 ```
@@ -57,6 +58,7 @@ The following is an example of the request.
   "blockType": "request",
   "name": "create_educationschool_from_educationroot"
 }-->
+
 ```http
 POST https://graph.microsoft.com/v1.0/education/schools
 Content-type: application/json
@@ -85,18 +87,22 @@ Content-length: 292
 ```
 
 # [C#](#tab/csharp)
+
 [!INCLUDE [sample-code](../includes/snippets/csharp/create-educationschool-from-educationroot-csharp-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
 # [JavaScript](#tab/javascript)
+
 [!INCLUDE [sample-code](../includes/snippets/javascript/create-educationschool-from-educationroot-javascript-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
 # [Objective-C](#tab/objc)
+
 [!INCLUDE [sample-code](../includes/snippets/objc/create-educationschool-from-educationroot-objc-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
 # [Java](#tab/java)
+
 [!INCLUDE [sample-code](../includes/snippets/java/create-educationschool-from-educationroot-java-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
@@ -106,13 +112,14 @@ Content-length: 292
 
 The following is an example of the response.
 
->**Note:** The response object shown here might be shortened for readability. All the properties will be returned from an actual call.
+> **Note:** The response object shown here might be shortened for readability. All the properties will be returned from an actual call.
 
 <!-- {
   "blockType": "response",
   "truncated": true,
   "@odata.type": "microsoft.graph.educationSchool"
 } -->
+
 ```http
 HTTP/1.1 201 Created
 Content-type: application/json
@@ -159,4 +166,3 @@ Content-length: 292
   "suppressions": [
   ]
 }-->
-

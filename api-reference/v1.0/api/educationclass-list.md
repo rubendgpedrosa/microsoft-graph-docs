@@ -1,17 +1,17 @@
 ---
-title: "Get educationClass"
-description: "Retrieve a class from the system"
-localization_priority: Normal
+title: "List classes"
+description: "Get a list of the educationClass objects and their properties."
 author: "mlafleur"
+localization_priority: Normal
 ms.prod: "education"
 doc_type: apiPageType
 ---
 
-# Get a Class
+# List Classes
 
 Namespace: microsoft.graph
 
-Retrieve a class from the system. A class is a universal group with a special property that indicates to the system that the group is a class. Group members represent the students; group admins represent the teachers in the class. If you're using the delegated token, the user will only see classes in which they are members.
+Get a list of the [educationClass](../resources/educationclass.md) objects and their properties.
 
 ## Permissions
 
@@ -31,7 +31,10 @@ One of the following permissions is required to call this API. To learn more, in
 -->
 
 ```http
-GET /education/classes/{educationClassId}
+GET /education/classes
+GET /education/me/classes
+GET /education/users/{id}/classes
+GET /education/schools/{id}/classes
 ```
 
 ## Optional query parameters
@@ -50,7 +53,7 @@ Do not supply a request body for this method.
 
 ## Response
 
-If successful, this method returns a `200 OK` response code and an [educationClass](../resources/educationclass.md) object in the response body.
+If successful, this method returns a `200 OK` response code and a collection of [educationClass](../resources/educationclass.md) objects in the response body.
 
 ## Examples
 
@@ -58,12 +61,12 @@ If successful, this method returns a `200 OK` response code and an [educationCla
 
 <!-- {
   "blockType": "request",
-  "name": "get_educationclass"
+  "name": "list_educationclass"
 }
 -->
 
 ```http
-GET https://graph.microsoft.com/v1.0/education/classes/{educationClassId}
+GET https://graph.microsoft.com/v1.0/education/classes
 ```
 
 ### Response
@@ -73,7 +76,7 @@ GET https://graph.microsoft.com/v1.0/education/classes/{educationClassId}
 <!-- {
   "blockType": "response",
   "truncated": true,
-  "@odata.type": "microsoft.education.rostering.api.educationClass"
+  "@odata.type": "Collection(microsoft.education.rostering.api.educationClass)"
 }
 -->
 
@@ -82,26 +85,28 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "value": {
-    "@odata.type": "#microsoft.education.rostering.api.educationClass",
-    "displayName": "String",
-    "mailNickname": "String",
-    "description": "String",
-    "createdBy": {
-      "@odata.type": "microsoft.graph.identitySet"
-    },
-    "classCode": "String",
-    "externalName": "String",
-    "externalId": "String",
-    "externalSource": "String",
-    "externalSourceDetail": "String",
-    "grade": "String",
-    "term": {
-      "@odata.type": "microsoft.graph.educationTerm"
-    },
-    "course": {
-      "@odata.type": "microsoft.graph.educationCourse"
+  "value": [
+    {
+      "@odata.type": "#microsoft.education.rostering.api.educationClass",
+      "displayName": "String",
+      "mailNickname": "String",
+      "description": "String",
+      "createdBy": {
+        "@odata.type": "microsoft.graph.identitySet"
+      },
+      "classCode": "String",
+      "externalName": "String",
+      "externalId": "String",
+      "externalSource": "String",
+      "externalSourceDetail": "String",
+      "grade": "String",
+      "term": {
+        "@odata.type": "microsoft.graph.educationTerm"
+      },
+      "course": {
+        "@odata.type": "microsoft.graph.educationCourse"
+      }
     }
-  }
+  ]
 }
 ```

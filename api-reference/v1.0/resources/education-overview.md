@@ -23,7 +23,7 @@ To deploy apps that are integrated with the Education APIs in Microsoft Graph, s
 
 To show a consent dialog box, use the following REST call.
 
-``` http
+```http
 GET https://login.microsoftonline.com/{tenant}/adminconsent?
 client_id={clientId}&state=12345&redirect_uri={redirectUrl}
 ```
