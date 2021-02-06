@@ -109,7 +109,6 @@ Content-length: 593
 {
   "value": [
     {
-      "id": "14006",
       "displayName": "Kristie Mitchell",
       "givenName": "Kristie",
       "middleName": "Anne",

@@ -17,10 +17,10 @@ Represents the mapping between an education user type and the domain the user's 
 
 ## Properties
 
-| Property  | Type   | Description                                                                                        |
-| :-------- | :----- | :------------------------------------------------------------------------------------------------- |
-| appliesTo | String | The user role type to assign to the license. Possible values are: `student`, `teacher`, `faculty`. |
-| name      | String | Represents the domain for the user account.                                                        |
+| Property  | Type   | Description                                                                             |
+| :-------- | :----- | :-------------------------------------------------------------------------------------- |
+| appliesTo | String | The user role type to assign to the license. Possible values are: `student`, `teacher`. |
+| name      | String | Represents the domain for the user account.                                             |
 
 ## JSON representation
 
@@ -38,5 +38,3 @@ Represents the mapping between an education user type and the domain the user's 
   "name": "String"
 }
 ```
-
-

@@ -69,7 +69,7 @@ GET https://graph.microsoft.com/v1.0/education/schools/delta
 <!-- {
   "blockType": "response",
   "truncated": true,
-  "@odata.type": "Collection(microsoft.education.rostering.api.educationSchool)"
+  "@odata.type": "Collection(microsoft.graph.educationSchool)"
 }
 -->
 
@@ -80,7 +80,8 @@ Content-Type: application/json
 {
   "value": [
     {
-      "@odata.type": "#microsoft.education.rostering.api.educationSchool",
+      "@odata.type": "#microsoft.graph.educationSchool",
+      "id": "String (identifier)",
       "displayName": "String",
       "description": "String",
       "externalSource": "String",

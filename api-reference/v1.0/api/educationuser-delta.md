@@ -69,7 +69,7 @@ GET https://graph.microsoft.com/v1.0/education/users/delta
 <!-- {
   "blockType": "response",
   "truncated": true,
-  "@odata.type": "Collection(microsoft.education.rostering.api.educationUser)"
+  "@odata.type": "Collection(microsoft.graph.educationUser)"
 }
 -->
 
@@ -80,7 +80,8 @@ Content-Type: application/json
 {
   "value": [
     {
-      "@odata.type": "#microsoft.education.rostering.api.educationUser",
+      "@odata.type": "#microsoft.graph.educationUser",
+      "id": "String (identifier)",
       "primaryRole": "String",
       "middleName": "String",
       "externalSource": "String",

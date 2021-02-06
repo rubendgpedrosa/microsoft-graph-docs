@@ -47,23 +47,23 @@ In the request body, supply a JSON representation of the [educationSchool](../re
 
 The following table shows the properties that are required when you create the [educationSchool](../resources/educationschool.md).
 
-| Property             | Type                                               | Description                                                                                                                                                                                        |
-| :------------------- | :------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| displayName          | String                                             | Display name of the school. Inherited from [educationOrganization](../resources/educationorganization.md)                                                                                          |
-| description          | String                                             | Description of the school. Inherited from [educationOrganization](../resources/educationorganization.md)                                                                                           |
-| externalSource       | educationExternalSource                            | Source where this organization was created from. Inherited from [educationOrganization](../resources/educationorganization.md). Possible values are: `sis`, `manual`, `unknownFutureValue`, `lms`. |
-| externalSourceDetail | String                                             | The name of the external source this resources was generated from.                                                                                                                                 |
-| principalEmail       | String                                             | Email address of the principal.                                                                                                                                                                    |
-| principalName        | String                                             | Name of the principal.                                                                                                                                                                             |
-| externalPrincipalId  | String                                             | ID of principal in syncing system.                                                                                                                                                                 |
-| highestGrade         | String                                             | Highest grade taught.                                                                                                                                                                              |
-| lowestGrade          | String                                             | Lowest grade taught.                                                                                                                                                                               |
-| schoolNumber         | String                                             | School Number.                                                                                                                                                                                     |
-| externalId           | String                                             | ID of school in syncing system.                                                                                                                                                                    |
-| phone                | String                                             | Phone number of school.                                                                                                                                                                            |
-| fax                  | String                                             | Fax number of school.                                                                                                                                                                              |
-| createdBy            | [identitySet](../resources/identityset.md)         | Entity who created the school.                                                                                                                                                                     |
-| address              | [physicalAddress](../resources/physicaladdress.md) | Address of the school.                                                                                                                                                                             |
+| Property             | Type                                               | Description                                                                                                                                                          |
+| :------------------- | :------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| displayName          | String                                             | Display name of the school. Inherited from [educationOrganization](../resources/educationorganization.md)                                                            |
+| description          | String                                             | Description of the school. Inherited from [educationOrganization](../resources/educationorganization.md)                                                             |
+| externalSource       | educationExternalSource                            | Source where this organization was created from. Inherited from [educationOrganization](../resources/educationorganization.md). Possible values are: `sis`, `manual. |
+| externalSourceDetail | String                                             | The name of the external source this resources was generated from.                                                                                                   |
+| principalEmail       | String                                             | Email address of the principal.                                                                                                                                      |
+| principalName        | String                                             | Name of the principal.                                                                                                                                               |
+| externalPrincipalId  | String                                             | ID of principal in syncing system.                                                                                                                                   |
+| highestGrade         | String                                             | Highest grade taught.                                                                                                                                                |
+| lowestGrade          | String                                             | Lowest grade taught.                                                                                                                                                 |
+| schoolNumber         | String                                             | School Number.                                                                                                                                                       |
+| externalId           | String                                             | ID of school in syncing system.                                                                                                                                      |
+| phone                | String                                             | Phone number of school.                                                                                                                                              |
+| fax                  | String                                             | Fax number of school.                                                                                                                                                |
+| createdBy            | [identitySet](../resources/identityset.md)         | Entity who created the school.                                                                                                                                       |
+| address              | [physicalAddress](../resources/physicaladdress.md) | Address of the school.                                                                                                                                               |
 
 ## Response
 
@@ -82,10 +82,10 @@ If successful, this method returns a `201 Created` response code and an [educati
 ```http
 POST https://graph.microsoft.com/v1.0/education/schools
 Content-Type: application/json
-Content-length: 601
+Content-length: 583
 
 {
-  "@odata.type": "#microsoft.education.rostering.api.educationSchool",
+  "@odata.type": "#microsoft.graph.educationSchool",
   "displayName": "String",
   "description": "String",
   "externalSource": "String",
@@ -115,7 +115,7 @@ Content-length: 601
 <!-- {
   "blockType": "response",
   "truncated": true,
-  "@odata.type": "microsoft.education.rostering.api.educationSchool"
+  "@odata.type": "microsoft.graph.educationSchool"
 }
 -->
 
@@ -124,7 +124,8 @@ HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
-  "@odata.type": "#microsoft.education.rostering.api.educationSchool",
+  "@odata.type": "#microsoft.graph.educationSchool",
+  "id": "1c23c12e-c12e-1c23-2ec1-231c2ec1231c",
   "displayName": "String",
   "description": "String",
   "externalSource": "String",

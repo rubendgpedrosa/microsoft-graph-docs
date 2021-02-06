@@ -57,7 +57,7 @@ The following table shows the properties that are required when you update the [
 | createdBy            | [identitySet](../resources/identityset.md)                         | Entity who created the user.                                                                                                                                                                                                                                                                                                                                |
 | department           | String                                                             | The name for the department in which the user works. Supports $filter.                                                                                                                                                                                                                                                                                      |
 | displayName          | String                                                             | The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Supports $filter and $orderby.                                                                                      |
-| externalSource       | educationExternalSource                                            | Where this user was created from. Possible values are: `sis`, `manual`, `unknownFutureValue`, `lms`.                                                                                                                                                                                                                                                        |
+| externalSource       | educationExternalSource                                            | Where this user was created from. Possible values are: `sis`, `manual`.                                                                                                                                                                                                                                                                                     |
 | externalSourceDetail | String                                                             | The name of the external source this resources was generated from.                                                                                                                                                                                                                                                                                          |
 | givenName            | String                                                             | The given name (first name) of the user. Supports $filter.                                                                                                                                                                                                                                                                                                  |
 | mail                 | String                                                             | The SMTP address for the user; for example, "jeff@contoso.onmicrosoft.com". Read-Only. Supports $filter.                                                                                                                                                                                                                                                    |
@@ -69,7 +69,7 @@ The following table shows the properties that are required when you update the [
 | passwordPolicies     | String                                                             | Specifies password policies for the user. This value is an enumeration with one possible value being "DisableStrongPassword", which allows weaker passwords than the default policy to be specified. "DisablePasswordExpiration" can also be specified. The two can be specified together; for example: "DisablePasswordExpiration, DisableStrongPassword". |
 | passwordProfile      | [passwordProfile](../resources/passwordprofile.md)                 | Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the **passwordPolicies** property. By default, a strong password is required.                                                        |
 | preferredLanguage    | String                                                             | The preferred language for the user. Should follow ISO 639-1 Code; for example, "en-US".                                                                                                                                                                                                                                                                    |
-| primaryRole          | educationUserRole                                                  | Default role for a user. The user's role might be different in an individual class. Possible values are: `student`, `teacher`, `none`, `unknownFutureValue`, `faculty`.                                                                                                                                                                                     |
+| primaryRole          | educationUserRole                                                  | Default role for a user. The user's role might be different in an individual class. Possible values are: `student`, `teacher`, `none`, `unknownFutureValue`.                                                                                                                                                                                                |
 | provisionedPlans     | [provisionedPlan](../resources/provisionedplan.md) collection      | The plans that are provisioned for the user. Read-only. Not nullable.                                                                                                                                                                                                                                                                                       |
 | residenceAddress     | [physicalAddress](../resources/physicaladdress.md)                 | Address where user lives.                                                                                                                                                                                                                                                                                                                                   |
 | student              | [educationStudent](../resources/educationstudent.md)               | If the primary role is student, this block will contain student specific data.                                                                                                                                                                                                                                                                              |
@@ -90,75 +90,18 @@ If successful, this method returns a `200 OK` response code and an updated [educ
 <!-- {
   "blockType": "request",
   "name": "update_educationuser"
-}
--->
+}-->
 
 ```http
-PATCH https://graph.microsoft.com/v1.0/education/me
-Content-Type: application/json
-Content-length: 1585
+PATCH https://graph.microsoft.com/beta/education/users/13020
+Content-type: application/json
+Content-length: 508
 
 {
-  "@odata.type": "#microsoft.graph.educationUser",
-  "primaryRole": "String",
-  "middleName": "String",
-  "externalSource": "String",
-  "externalSourceDetail": "String",
-  "residenceAddress": {
-    "@odata.type": "microsoft.graph.physicalAddress"
-  },
-  "mailingAddress": {
-    "@odata.type": "microsoft.graph.physicalAddress"
-  },
-  "student": {
-    "@odata.type": "microsoft.graph.educationStudent"
-  },
-  "teacher": {
-    "@odata.type": "microsoft.graph.educationTeacher"
-  },
-  "createdBy": {
-    "@odata.type": "microsoft.graph.identitySet"
-  },
-  "accountEnabled": "Boolean",
-  "assignedLicenses": [
-    {
-      "@odata.type": "microsoft.graph.assignedLicense"
-    }
-  ],
-  "assignedPlans": [
-    {
-      "@odata.type": "microsoft.graph.assignedPlan"
-    }
-  ],
-  "businessPhones": [
-    "String"
-  ],
-  "department": "String",
-  "displayName": "String",
-  "givenName": "String",
-  "mail": "String",
-  "mailNickname": "String",
-  "mobilePhone": "String",
-  "passwordPolicies": "String",
-  "passwordProfile": {
-    "@odata.type": "microsoft.graph.passwordProfile"
-  },
-  "officeLocation": "String",
-  "preferredLanguage": "String",
-  "provisionedPlans": [
-    {
-      "@odata.type": "microsoft.graph.provisionedPlan"
-    }
-  ],
-  "refreshTokensValidFromDateTime": "String (timestamp)",
-  "showInAddressList": "Boolean",
-  "surname": "String",
-  "usageLocation": "String",
-  "userPrincipalName": "String",
-  "userType": "String",
-  "onPremisesInfo": {
-    "@odata.type": "microsoft.graph.educationOnPremisesInfo"
-  }
+  "displayName": "Rogelio Cazares",
+  "givenName": "Rogelio",
+  "middleName": "Fernando",
+  "surname": "Cazares",
 }
 ```
 
@@ -168,74 +111,53 @@ Content-length: 1585
 
 <!-- {
   "blockType": "response",
-  "truncated": true
-}
--->
+  "truncated": true,
+  "@odata.type": "microsoft.graph.educationUser"
+} -->
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: application/json
+Content-type: application/json
+Content-length: 508
 
 {
-  "@odata.type": "#microsoft.graph.educationUser",
-  "primaryRole": "String",
-  "middleName": "String",
-  "externalSource": "String",
-  "externalSourceDetail": "String",
-  "residenceAddress": {
-    "@odata.type": "microsoft.graph.physicalAddress"
-  },
-  "mailingAddress": {
-    "@odata.type": "microsoft.graph.physicalAddress"
-  },
-  "student": {
-    "@odata.type": "microsoft.graph.educationStudent"
-  },
-  "teacher": {
-    "@odata.type": "microsoft.graph.educationTeacher"
-  },
+  "id": "13020",
+  "displayName": "Rogelio Cazares",
+  "givenName": "Rogelio",
+  "middleName": "Fernando",
+  "surname": "Cazares",
+  "mail": "rogelioC@contoso.com",
+  "mobilePhone": "+1 (253) 555-0101",
   "createdBy": {
-    "@odata.type": "microsoft.graph.identitySet"
+        "user": {
+          "displayName": "Susana Rocha",
+          "id": "14012",
+        }
   },
-  "accountEnabled": "Boolean",
-  "assignedLicenses": [
-    {
-      "@odata.type": "microsoft.graph.assignedLicense"
+  "externalSource": "sis",
+  "mailingAddress": {
+        "city": "Los Angeles",
+        "countryOrRegion": "United States",
+        "postalCode": "98055",
+        "state": "CA",
+        "street": "12345 Main St."
+      },
+  "primaryRole": "string",
+  "residenceAddress": {
+        "city": "Los Angeles",
+        "countryOrRegion": "United States",
+        "postalCode": "98055",
+        "state": "CA",
+        "street": "12345 Main St."
+      },
+  "student": {
+      "primaryRole": "student",
+      "externalId": "13005",
+      "birthDate": "2001-01-01T00:00:00Z"
     }
-  ],
-  "assignedPlans": [
-    {
-      "@odata.type": "microsoft.graph.assignedPlan"
-    }
-  ],
-  "businessPhones": [
-    "String"
-  ],
-  "department": "String",
-  "displayName": "String",
-  "givenName": "String",
-  "mail": "String",
-  "mailNickname": "String",
-  "mobilePhone": "String",
-  "passwordPolicies": "String",
-  "passwordProfile": {
-    "@odata.type": "microsoft.graph.passwordProfile"
-  },
-  "officeLocation": "String",
-  "preferredLanguage": "String",
-  "provisionedPlans": [
-    {
-      "@odata.type": "microsoft.graph.provisionedPlan"
-    }
-  ],
-  "refreshTokensValidFromDateTime": "String (timestamp)",
-  "showInAddressList": "Boolean",
-  "surname": "String",
-  "usageLocation": "String",
-  "userPrincipalName": "String",
-  "userType": "String",
-  "onPremisesInfo": {
-    "@odata.type": "microsoft.graph.educationOnPremisesInfo"
-  }
 }
+```
+
+```
+$$
 ```

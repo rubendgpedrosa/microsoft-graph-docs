@@ -19,7 +19,6 @@ One of the following permissions is required to call this API. To learn more, in
 
 | Permission type                        | Permissions (from least to most privileged) |
 | :------------------------------------- | :------------------------------------------ |
-| :------------------------------------- | :------------------------------------------ |
 | Delegated (work or school account)     | Not supported.                              |
 | Delegated (personal Microsoft account) | Not supported.                              |
 | Application                            | EduRoster.ReadWrite.All                     |
@@ -48,19 +47,19 @@ In the request body, supply a JSON representation of the [educationClass](../res
 
 The following table shows the properties that are required when you update the [educationClass](../resources/educationclass.md).
 
-| Property             | Type                                               | Description                                                                                    |
-| :------------------- | :------------------------------------------------- | :--------------------------------------------------------------------------------------------- |
-| displayName          | String                                             | Name of the class.                                                                             |
-| mailNickname         | String                                             | Mail name for sending email to all members, if this is enabled.                                |
-| description          | String                                             | Description of the class.                                                                      |
-| createdBy            | [identitySet](../resources/identityset.md)         | Entity who created the class                                                                   |
-| classCode            | String                                             | Class code used by the school to identify the class.                                           |
-| externalId           | String                                             | ID of the class from the syncing system.                                                       |
-| externalSource       | educationExternalSource                            | How this class was created. Possible values are: `sis`, `manual`, `unknownFutureValue`, `lms`. |
-| externalSourceDetail | String                                             | The name of the external source this resources was generated from.                             |
-| grade                | String                                             | Grade level of the class.                                                                      |
-| term                 | [educationTerm](../resources/educationterm.md)     | Term for this class.                                                                           |
-| course               | [educationCourse](../resources/educationcourse.md) | Course information for the class                                                               |
+| Property             | Type                                               | Description                                                        |
+| :------------------- | :------------------------------------------------- | :----------------------------------------------------------------- |
+| displayName          | String                                             | Name of the class.                                                 |
+| mailNickname         | String                                             | Mail name for sending email to all members, if this is enabled.    |
+| description          | String                                             | Description of the class.                                          |
+| createdBy            | [identitySet](../resources/identityset.md)         | Entity who created the class                                       |
+| classCode            | String                                             | Class code used by the school to identify the class.               |
+| externalId           | String                                             | ID of the class from the syncing system.                           |
+| externalSource       | educationExternalSource                            | How this class was created. Possible values are: `sis`, `manual`   |
+| externalSourceDetail | String                                             | The name of the external source this resources was generated from. |
+| grade                | String                                             | Grade level of the class.                                          |
+| term                 | [educationTerm](../resources/educationterm.md)     | Term for this class.                                               |
+| course               | [educationCourse](../resources/educationcourse.md) | Course information for the class                                   |
 
 ## Response
 
@@ -110,7 +109,8 @@ Content-length: 533
 
 <!-- {
   "blockType": "response",
-  "truncated": true
+  "truncated": true,
+  "@odata.type": "microsoft.graph.educationClass"
 }
 -->
 
@@ -120,6 +120,7 @@ Content-Type: application/json
 
 {
   "@odata.type": "#microsoft.graph.educationClass",
+  "id": "64ef8ce5-8ce5-64ef-e58c-ef64e58cef64",
   "displayName": "String",
   "mailNickname": "String",
   "description": "String",

@@ -1,17 +1,17 @@
 ---
-title: "Get educationSchool"
-description: "Read the properties and relationships of an educationSchool object."
-author: "mlafleur"
+title: "List administrativeUnit"
+description: "Get the administrativeUnit resources from the administrativeUnit navigation property."
+author: "mmast"
 localization_priority: Normal
 ms.prod: "education"
 doc_type: apiPageType
 ---
 
-# Get a School
+# List administrativeUnit
 
 Namespace: microsoft.graph
 
-Read the properties and relationships of an [educationSchool](../resources/educationschool.md) object.
+Get the administrativeUnit resources from the administrativeUnit navigation property.
 
 ## Permissions
 
@@ -31,7 +31,7 @@ One of the following permissions is required to call this API. To learn more, in
 -->
 
 ```http
-GET /education/schools/{educationSchoolId}
+GET /education/classes/{educationClassId}/members/{educationUserId}/schools/{educationSchoolId}/administrativeUnit
 ```
 
 ## Optional query parameters
@@ -50,7 +50,7 @@ Do not supply a request body for this method.
 
 ## Response
 
-If successful, this method returns a `200 OK` response code and an [educationSchool](../resources/educationschool.md) object in the response body.
+If successful, this method returns a `200 OK` response code and a collection of [administrativeUnit](../resources/administrativeunit.md) objects in the response body.
 
 ## Examples
 
@@ -58,12 +58,12 @@ If successful, this method returns a `200 OK` response code and an [educationSch
 
 <!-- {
   "blockType": "request",
-  "name": "get_educationschool"
+  "name": "list_administrativeunit"
 }
 -->
 
 ```http
-GET https://graph.microsoft.com/v1.0/education/schools/{educationSchoolId}
+GET https://graph.microsoft.com/v1.0/education/classes/{educationClassId}/members/{educationUserId}/schools/{educationSchoolId}/administrativeUnit
 ```
 
 ### Response
@@ -73,7 +73,7 @@ GET https://graph.microsoft.com/v1.0/education/schools/{educationSchoolId}
 <!-- {
   "blockType": "response",
   "truncated": true,
-  "@odata.type": "microsoft.graph.educationSchool"
+  "@odata.type": "Collection(microsoft.graph.administrativeUnit)"
 }
 -->
 
@@ -82,28 +82,15 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "value": {
-    "@odata.type": "#microsoft.graph.educationSchool",
-    "id": "1c23c12e-c12e-1c23-2ec1-231c2ec1231c",
-    "displayName": "String",
-    "description": "String",
-    "externalSource": "String",
-    "externalSourceDetail": "String",
-    "principalEmail": "String",
-    "principalName": "String",
-    "externalPrincipalId": "String",
-    "lowestGrade": "String",
-    "highestGrade": "String",
-    "schoolNumber": "String",
-    "externalId": "String",
-    "phone": "String",
-    "fax": "String",
-    "createdBy": {
-      "@odata.type": "microsoft.graph.identitySet"
-    },
-    "address": {
-      "@odata.type": "microsoft.graph.physicalAddress"
+  "value": [
+    {
+      "@odata.type": "#microsoft.graph.administrativeUnit",
+      "id": "03e281d6-81d6-03e2-d681-e203d681e203",
+      "deletedDateTime": "String (timestamp)",
+      "displayName": "String",
+      "description": "String",
+      "visibility": "String"
     }
-  }
+  ]
 }
 ```

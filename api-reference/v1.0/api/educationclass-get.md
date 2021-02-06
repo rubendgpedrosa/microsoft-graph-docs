@@ -73,7 +73,7 @@ GET https://graph.microsoft.com/v1.0/education/classes/{educationClassId}
 <!-- {
   "blockType": "response",
   "truncated": true,
-  "@odata.type": "microsoft.education.rostering.api.educationClass"
+  "@odata.type": "microsoft.graph.educationClass"
 }
 -->
 
@@ -83,7 +83,8 @@ Content-Type: application/json
 
 {
   "value": {
-    "@odata.type": "#microsoft.education.rostering.api.educationClass",
+    "@odata.type": "#microsoft.graph.educationClass",
+    "id": "64ef8ce5-8ce5-64ef-e58c-ef64e58cef64",
     "displayName": "String",
     "mailNickname": "String",
     "description": "String",

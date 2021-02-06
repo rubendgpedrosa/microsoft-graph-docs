@@ -1,5 +1,5 @@
 ---
-title: "List members of the class"
+title: "List class members"
 description: "Retrieves the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class."
 localization_priority: Normal
 author: "mmast-msft"
@@ -166,7 +166,7 @@ Content-length: 593
         "street": "12345 Main St."
       },
       "student": {
-        "birthDate": "2001-01-01T00:00:00Z",
+        "birthDate": "2001-01-01",
         "externalId": "13005",
         "gender": "female",
         "grade": "9",

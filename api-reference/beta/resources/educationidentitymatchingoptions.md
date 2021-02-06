@@ -19,7 +19,7 @@ Provides a mapping between a source property and a target property for matching 
 
 | Property           | Type   | Description                                                                                                                                                    |
 | :----------------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| appliesTo          | String | The user role type to assign to the license. Possible values are: `student`, `teacher`, `faculty`.                                                             |
+| appliesTo          | String | The user role type to assign to the license. Possible values are: `student`, `teacher`.                                                                        |
 | sourcePropertyName | String | The name of the source property, which should be a field name in the source data. This property is case-sensitive.                                             |
 | targetPropertyName | String | The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.                                                |
 | targetDomain       | String | The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property. |
@@ -42,5 +42,3 @@ Provides a mapping between a source property and a target property for matching 
   "targetDomain": "String"
 }
 ```
-
-

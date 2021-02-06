@@ -74,7 +74,7 @@ GET https://graph.microsoft.com/v1.0/education/me
 <!-- {
   "blockType": "response",
   "truncated": true,
-  "@odata.type": "microsoft.education.rostering.api.educationUser"
+  "@odata.type": "microsoft.graph.educationUser"
 }
 -->
 
@@ -84,7 +84,8 @@ Content-Type: application/json
 
 {
   "value": {
-    "@odata.type": "#microsoft.education.rostering.api.educationUser",
+    "@odata.type": "#microsoft.graph.educationUser",
+    "id": "90eedea1-dea1-90ee-a1de-ee90a1deee90",
     "primaryRole": "String",
     "middleName": "String",
     "externalSource": "String",

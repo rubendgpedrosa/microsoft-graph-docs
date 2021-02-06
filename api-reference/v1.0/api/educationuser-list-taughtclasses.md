@@ -31,8 +31,7 @@ One of the following permissions is required to call this API. To learn more, in
 -->
 
 ```http
-GET /education/me/taughtClasses
-GET /education/users/{educationUserId}/taughtClasses
+GET /education/classes/{educationClassId}/members/{educationUserId}/taughtClasses
 ```
 
 ## Optional query parameters
@@ -74,7 +73,7 @@ GET https://graph.microsoft.com/v1.0/education/classes/{educationClassId}/member
 <!-- {
   "blockType": "response",
   "truncated": true,
-  "@odata.type": "Collection(microsoft.education.rostering.api.educationClass)"
+  "@odata.type": "Collection(microsoft.graph.educationClass)"
 }
 -->
 
@@ -85,7 +84,8 @@ Content-Type: application/json
 {
   "value": [
     {
-      "@odata.type": "#microsoft.education.rostering.api.educationClass",
+      "@odata.type": "#microsoft.graph.educationClass",
+      "id": "64ef8ce5-8ce5-64ef-e58c-ef64e58cef64",
       "displayName": "String",
       "mailNickname": "String",
       "description": "String",
