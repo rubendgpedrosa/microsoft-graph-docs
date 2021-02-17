@@ -38,7 +38,6 @@ Inherits from [educationOrganization](../resources/educationorganization.md).
 | externalPrincipalId  | String                                             | ID of principal in syncing system.                                                                                                                                   |
 | externalSource       | educationExternalSource                            | Source where this organization was created from. Inherited from [educationOrganization](../resources/educationorganization.md). Possible values are: `sis`, `manual` |
 | externalSourceDetail | String                                             | The name of the external source this resources was generated from.                                                                                                   |
-| fax                  | String                                             | Fax number of school.                                                                                                                                                |
 | highestGrade         | String                                             | Highest grade taught.                                                                                                                                                |
 | id                   | String                                             | Object identifier. Inherited from [entity](../resources/entity.md)                                                                                                   |
 | lowestGrade          | String                                             | Lowest grade taught.                                                                                                                                                 |
@@ -84,7 +83,6 @@ The following is a JSON representation of the resource.
   "schoolNumber": "String",
   "externalId": "String",
   "phone": "String",
-  "fax": "String",
   "createdBy": {
     "@odata.type": "microsoft.graph.identitySet"
   },
