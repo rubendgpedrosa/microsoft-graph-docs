@@ -13,6 +13,22 @@ For a summary of the value of these API changes, as well as recent tools, compon
 
 ## February 2021
 
+
+### Education
+
+| **Change type** | **Version** | **Description**                                                                                                                                                                                                                             |
+| :-------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Addition        | v1.0        | Added the [educationOnPremisesInfo](https://docs.microsoft.com/en-us/graph/api/resources/educationOnPremisesInfo?view=graph-rest-1.0) resource.                                                                                             |
+| Addition        | v1.0        | Added the **grade** property to [educationUser](https://docs.microsoft.com/en-us/graph/api/resources/educationUser?view=graph-rest-1.0) resource.                                                                                           |
+| Addition        | v1.0        | Added the **course** property to [educationUser](https://docs.microsoft.com/en-us/graph/api/resources/educationUser?view=graph-rest-1.0) resource.                                                                                          |
+| Addition        | v1.0        | Added the **externalSourceDetail** property to [educationUser](https://docs.microsoft.com/en-us/graph/api/resources/educationUser?view=graph-rest-1.0) resource.                                                                            |
+| Addition        | v1.0        | Added the [educationTerm](https://docs.microsoft.com/en-us/graph/api/resources/educationTerm?view=graph-rest-1.0) resource type.                                                                                                            |
+| Addition        | v1.0        | Added the **taughtClasses** relationship to the [educationUser](https://docs.microsoft.com/en-us/graph/api/resources/educationUser?view=graph-rest-1.0) resource type.                                                                      |
+| Addition        | v1.0        | Added the **externalSourceDetail** property to the [educationSchool](https://docs.microsoft.com/en-us/graph/api/resources/educationSchool?view=graph-rest-1.0) resource.                                                                    |
+| Addition        | v1.0        | Added the [delta](https://docs.microsoft.com/en-us/graph/api/educationClass-delta?view=graph-rest-1.0) method to the [educationClass](https://docs.microsoft.com/en-us/graph/api/resources/educationClass?view=graph-rest-1.0) resource.    |
+| Addition        | v1.0        | Added the [delta](https://docs.microsoft.com/en-us/graph/api/educationSchool-delta?view=graph-rest-1.0) method to the [educationSchool](https://docs.microsoft.com/en-us/graph/api/resources/educationSchool?view=graph-rest-1.0) resource. |
+| Addition        | v1.0        | Added the [delta](https://docs.microsoft.com/en-us/graph/api/educationUser-delta?view=graph-rest-1.0) method to the [educationUser](https://docs.microsoft.com/en-us/graph/api/resources/educationUser?view=graph-rest-1.0) resource.       |
+
 ### Tasks and plans
 
 | **Change type** | **Version** | **Description** |
