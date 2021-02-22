@@ -2,6 +2,7 @@
 title: "List the schools a class belongs to"
 description: "Retrieve a list of schools in which the class is taught."
 author: "mmast-msft"
+ms.author: "mmast-msft"
 localization_priority: Normal
 ms.prod: "education"
 doc_type: apiPageType

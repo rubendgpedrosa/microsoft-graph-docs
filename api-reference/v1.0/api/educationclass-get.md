@@ -2,7 +2,8 @@
 title: "Get educationClass"
 description: "Retrieve a class from the system"
 localization_priority: Normal
-author: "mlafleur"
+author: "mmast-msft"
+ms.author: "mmast-msft"
 ms.prod: "education"
 doc_type: apiPageType
 ---

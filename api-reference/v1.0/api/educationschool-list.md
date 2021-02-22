@@ -1,7 +1,8 @@
 ---
 title: "List educationSchools"
 description: "Get a list of the educationSchool objects and their properties."
-author: "mlafleur"
+author: "mmast-msft"
+ms.author: "mmast-msft"
 localization_priority: Normal
 ms.prod: "education"
 doc_type: apiPageType

@@ -1,7 +1,8 @@
 ---
 title: "List educationUsers"
 description: "Get a list of the educationUser objects and their properties."
-author: "mlafleur"
+author: "mmast-msft"
+ms.author: "mmast-msft"
 localization_priority: Normal
 ms.prod: "education"
 doc_type: apiPageType

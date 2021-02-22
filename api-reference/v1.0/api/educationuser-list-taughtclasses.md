@@ -1,7 +1,8 @@
 ---
 title: "List taughtClasses"
 description: "Get the educationClass resources from the taughtClasses navigation property."
-author: "mlafleur"
+author: "mmast-msft"
+ms.author: "mmast-msft"
 localization_priority: Normal
 ms.prod: "education"
 doc_type: apiPageType

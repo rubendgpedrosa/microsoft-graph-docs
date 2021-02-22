@@ -1,7 +1,8 @@
 ---
 title: "Delete educationSchool"
 description: "Deletes an educationSchool object."
-author: "mlafleur"
+author: "mmast-msft"
+ms.author: "mmast-msft"
 localization_priority: Normal
 ms.prod: "education"
 doc_type: apiPageType
