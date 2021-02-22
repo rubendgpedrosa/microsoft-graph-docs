@@ -3872,6 +3872,23 @@ items:
             href: api/domain-update.md
           - name: Verify domain
             href: api/domain-verify.md
+        - name: Feature rollout policy
+          href: resources/featurerolloutpolicies.md
+          items:
+          - name: List
+            href: api/featurerolloutpolicies-list.md
+          - name: Get
+            href: api/featurerolloutpolicies-get.md
+          - name: Create
+            href: api/featurerolloutpolicies-post.md
+          - name: Update
+            href: api/featurerolloutpolicies-update.md
+          - name: Delete
+            href: api/featurerolloutpolicies-delete.md
+          - name: Create appliesTo
+            href: api/featurerolloutpolicies-post-appliesto.md
+          - name: Delete appliesTo
+            href: api/featurerolloutpolicies-delete-appliesto.md
         - name: Organization
           href: resources/organization.md
           items:
