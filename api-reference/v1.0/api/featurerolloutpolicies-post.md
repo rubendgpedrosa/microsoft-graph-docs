@@ -11,8 +11,6 @@ doc_type: "apiPageType"
 
 Namespace: microsoft.graph
 
-[!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
-
 Create a new [featureRolloutPolicy](../resources/featurerolloutpolicy.md) object.
 
 ## Permissions
@@ -30,7 +28,7 @@ One of the following permissions is required to call this API. To learn more, in
 <!-- { "blockType": "ignored" } -->
 
 ```http
-POST /directory/featureRolloutPolicies
+POST /policies/featureRolloutPolicies
 ```
 
 ## Request headers
@@ -68,7 +66,7 @@ The following is an example of the request.
 }-->
 
 ```http
-POST https://graph.microsoft.com/beta/directory/featureRolloutPolicies
+POST https://graph.microsoft.com/v1.0/policies/featureRolloutPolicies
 Content-type: application/json
 
 {

@@ -11,8 +11,6 @@ doc_type: "apiPageType"
 
 Namespace: microsoft.graph
 
-[!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
-
 Update the properties of [featureRolloutPolicy](../resources/featurerolloutpolicy.md) object.
 
 ## Permissions
@@ -30,7 +28,7 @@ One of the following permissions is required to call this API. To learn more, in
 <!-- { "blockType": "ignored" } -->
 
 ```http
-PATCH /directory/featureRolloutPolicies/{id}
+PATCH /policies/featureRolloutPolicies/{id}
 ```
 
 ## Request headers
@@ -65,7 +63,7 @@ The following is an example of the request.
 }-->
 
 ```http
-PATCH https://graph.microsoft.com/v1.0/directory/featureRolloutPolicies/d7ab4886-d7f0-441b-a5e6-e62d7328d18a
+PATCH https://graph.microsoft.com/v1.0/policies/featureRolloutPolicies/d7ab4886-d7f0-441b-a5e6-e62d7328d18a
 Content-type: application/json
 
 {

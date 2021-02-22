@@ -11,8 +11,6 @@ doc_type: "apiPageType"
 
 Namespace: microsoft.graph
 
-[!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
-
 Add an appliesTo on a [featureRolloutPolicy](../resources/featurerolloutpolicy.md) object to specify the [directoryObject](../resources/directoryobject.md) to which the [featureRolloutPolicy](../resources/featurerolloutpolicy.md) should be applied to.
 
 ## Permissions
@@ -30,7 +28,7 @@ One of the following permissions is required to call this API. To learn more, in
 <!-- { "blockType": "ignored" } -->
 
 ```http
-POST /directory/featureRolloutPolicies/{id}/appliesTo/$ref
+POST /policies/featureRolloutPolicies/{id}/appliesTo/$ref
 ```
 
 ## Request headers
@@ -60,11 +58,11 @@ The following is an example of the request.
 }-->
 
 ```http
-POST https://graph.microsoft.com/beta/directory/featureRolloutPolicies/{id}/appliesTo/$ref
+POST https://graph.microsoft.com/v1.0/policies/featureRolloutPolicies/{id}/appliesTo/$ref
 Content-type: application/json
 
 {
-  "@odata.id": " https://graph.microsoft.com/beta/directoryObjects/2441b489-4f12-4882-b039-8f6006bd66da"
+  "@odata.id": " https://graph.microsoft.com/v1.0/directoryObjects/2441b489-4f12-4882-b039-8f6006bd66da"
 }
 ```
 # [C#](#tab/csharp)
